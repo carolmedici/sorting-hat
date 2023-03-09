@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*COLORS*/
+
+
+    /*FONTS*/
+    --font-text: 'Sono', sans-serif;
+
+    /*ACCESSIBILITY*/
+    font-size: 62.5%;
+}
+
+body{
+    background-image: url('/assets/images/great-hall.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+   display: grid;
+   justify-content: center;
+}
+
+main{
+    width: 70rem;
+    height: 40rem;
+    background-color: rgba(0, 0, 0, 0.844);
+    margin-top: 15rem;
+    border-radius: 1rem;
+    border-style: 1rem 1rem solid black;
+}
+
+.hat-img{
+    width: 20rem;
+    position: relative;
+    right: -40rem;
+    top: 9rem;
+}
+
+
+.talking-hat, .questions{
+    color: rgb(228, 225, 225);
+    font-size: 3rem;
+    padding: 4rem;
+    font-family: var(--font-text);
+}
+
+.talking-hat{
+    margin-top: -15rem;
+    width: 50rem;
+    text-align: center;
+}
+
+
+.hide{
+    display: none;
+}
+
+
+/* Quiz */
+.hat-quiz-img{
+    width: 15rem;
+    position: relative;
+    right: -50rem;
+    top: 22rem;
+}
+
+input{
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+label{
+    color: white;
+    font-family: var(--font-text);
+    padding-left: 1rem;
+    font-size: 2rem;
+}
+
+.questions{
+    margin-top: -15rem;
+}
