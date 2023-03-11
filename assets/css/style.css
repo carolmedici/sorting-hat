@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;600;800&family=Yusei+Magic&display=swap');
+@font-face {
+    font-family: 'Magic Owl';
+    src: url(fonts/magicOwl.otf) format("opentype");
+}
 
 *{
     margin: 0;
@@ -15,6 +19,7 @@
     --button-text: #d1cfcf;
     --text-color: #e4e1e1;
     --button-back: #474646;
+    --label-hover: #f1e045;
 
     /*FONTS*/
     --font-text: 'Sono', sans-serif;
@@ -57,7 +62,7 @@ h1{
 .hat-img{
     width: 20rem;
     position: relative;
-    right: -40rem;
+    right: -45rem;
     top: 9rem;
 }
 
@@ -90,8 +95,9 @@ h1{
     font-family: var(--font-text);
     text-shadow: 1px 1px 1px black;
     box-shadow: 1px 1px 2px black;
-    margin-left: 25rem;
-    margin-top: 0rem;
+    margin-left: 45rem;
+    position: relative;
+    top: -3rem;
 
 }
 
@@ -103,8 +109,8 @@ h1{
 .hat-quiz-img{
     width: 15rem;
     position: relative;
-    right: -50rem;
-    top: 22rem;
+    right: -54rem;
+    top: 25rem;
 }
 
 input{
@@ -116,9 +122,17 @@ label{
     color: white;
     font-family: var(--font-text);
     padding-left: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;;
+}
+label:hover{
+    color: var(--label-hover)
 }
 
 .questions{
     margin-top: -15rem;
 }
+
+
+
+
+
