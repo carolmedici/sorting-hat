@@ -31,7 +31,7 @@
 
 body{
     background-color: white;
-    background-image: url('/assets/images/great-hall.jpg');
+    background-image: url('../images/great-hall.jpg');
    background-repeat: no-repeat;
    background-size: cover;
    height: 100vh;
