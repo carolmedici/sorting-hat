@@ -56,6 +56,7 @@ h1{
     margin-bottom: -5rem;
     text-shadow: 1rem 1rem 1rem rgba(192, 193, 189, 0.681);
     font-family:var(--font-title);
+   max-width: 86rem;
 
 }
 
@@ -109,7 +110,7 @@ h1{
 .hat-quiz-img{
     width: 15rem;
     position: relative;
-    right: -54rem;
+    right: -57rem;
     top: 25rem;
 }
 
@@ -130,6 +131,7 @@ label:hover{
 
 .questions{
     margin-top: -15rem;
+    max-width: 73rem;
 }
 
 
