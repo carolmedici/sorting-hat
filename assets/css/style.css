@@ -86,6 +86,9 @@ h1{
     display: none;
 }
 
+.hideResult{
+    display:none;
+}
 
 /*Next button*/
 .btn-next{
@@ -96,9 +99,9 @@ h1{
     font-family: var(--font-text);
     text-shadow: 1px 1px 1px black;
     box-shadow: 1px 1px 2px black;
-    margin-left: 45rem;
-    position: relative;
-    top: -3rem;
+    margin-left: 49rem;
+    position: fixed;
+    bottom: 18rem;
 
 }
 
