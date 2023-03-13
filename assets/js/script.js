@@ -4,10 +4,10 @@ const btnNext = document.querySelector('.btn-next')
 const apresentation = document.querySelector(".apresentation")
 const quiz = document.querySelector(".quiz")
 const questionsTest = document.querySelector('.questions')
-const alternative1 = document.querySelector('.alternative1')
-const alternative2 = document.querySelector(".alternative2")
-const alternative3 = document.querySelector(".alternative3")
-const alternative4 = document.querySelector(".alternative4")
+let alternative1 = document.querySelector('.alternative1')
+let alternative2 = document.querySelector(".alternative2")
+let alternative3 = document.querySelector(".alternative3")
+let alternative4 = document.querySelector(".alternative4")
 
 let mychoice = document.querySelector("input[type='radio']:checked");
 
@@ -15,7 +15,7 @@ let mychoice = document.querySelector("input[type='radio']:checked");
 
 async function talkingHat(){
    let wizardName = prompt('Hello wizard! Please, insert your name:')
-    
+    /*
     welcomeHat.innerText = `"Welcome to Hogwarts, ${wizardName}" `
    
     await delay(3)
@@ -42,7 +42,7 @@ async function talkingHat(){
     await delay(2)
     
     welcomeHat.innerText = `"Let me see what you're thinking..."`
-    await delay(2)
+    await delay(2)*/
 
     hideToggle()
     quizStart()
@@ -178,9 +178,32 @@ function nextQuestion(){
     quizStart()}
     else{
         alert("finish")
+        resultHouse()
     }
 }
-        
-    
+     
+let gryffindor = document.querySelector("#iA1")
+let ravenclaw = document.querySelector("#iA2")
+let slytherin = document.querySelector("#iA3")
+let hufflepuff = document.querySelector("#iA4")  
 
-    
+
+
+function resultHouse(){
+let valor= 0
+
+if (gryffindor.checked)
+{valor= 4}
+if (ravenclaw.checked)
+{valor= 3}
+if (slytherin.checked)
+{valor= 2}
+if (hufflepuff.checked)
+{valor= 1}
+
+if(valor[index]< quizQuestions.length -1)
+valor[index++]
+alert(valor)
+}
+
+
