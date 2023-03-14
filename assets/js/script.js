@@ -12,9 +12,9 @@ let alternative4 = document.querySelector(".alternative4")
 let mychoice = document.querySelector("input[type='radio']:checked");
 
 
-
+/*
 async function talkingHat(){
-   let wizardName = prompt('Hello wizard! Please, insert your name:')
+   let wizardName = prompt('Hello wizard! Please, insert your name:')*/
     /*
     welcomeHat.innerText = `"Welcome to Hogwarts, ${wizardName}" `
    
@@ -132,22 +132,31 @@ let quizQuestions = [
     },
 {
     question: "What is your idea of a perfect vacation?",
-    G: "Chilling out with friends and taking up new advetures",
-    R: "Studyng and preparing or anny anuual test/exam in advance",
-    S: "Watch movies and relax",
-    H: "Taking up an interactive or skill-based course",
+    G: {
+        text: "Chilling out with friends and taking up new advetures",
+        valor: 4,},
+    R: {
+        text: "Studyng and preparing or anny anuual test/exam in advance",
+        valor: 3,},
+    S: {
+        text:"Watch movies and relax",
+        valor: 2,},
+    H: { 
+        text: "Taking up an interactive or skill-based course", 
+        valor: 1,},
    },
 ];
 
-       let questionNumb = []
+      
        let questionQuestion = []
        let questionG = []
        let questionR = []
        let questionS = []
        let questionH = []
+       
 
        for( var ask of quizQuestions){
-        questionNumb.push(ask.numb)
+       
         questionQuestion.push(ask.question)
         questionG.push(ask.G)
         questionR.push(ask.R)
@@ -201,9 +210,44 @@ if (slytherin.checked)
 if (hufflepuff.checked)
 {valor= 1}
 
-if(valor[index]< quizQuestions.length -1)
-valor[index++]
-alert(valor)
+/*
+let ponto = quizQuestions[0].checked
+
+    alert([quizQuestions[0]].checked)
+/*
+let soma = valor[quizQuestions [0]] + valor[questionQuestion [1]] + valor[questionQuestion [2]] + valor[questionQuestion [3]] +valor[questionQuestion [4]] +valor[questionQuestion [5]] +valor[questionQuestion [6]] + valor[questionQuestion [7]] +valor[questionQuestion [8]] +valor[questionQuestion [9]]
+alert(valor[questionQuestion [0]])*/
+
+}
+
+/*SELECTED HOUSE FUNCTION */
+function houseSelected(){
+    if(result <=13){
+        hideH()
+    } else if (result <=25){
+        hideS()
+    } else if (result <=32){
+        hideR()
+    } else {
+        hideG()
+    }
+
 }
 
 
+function hideG(){
+    quiz.classList.toggle('hide')
+    gryffindorHouse.classList.toggle('hide')
+}
+function hideS(){
+    quiz.classList.toggle('hide')
+    slytherinHouse.classList.toggle('hide')
+}
+function hideR(){
+    quiz.classList.toggle('hide')
+    ravenclawHouse.classList.toggle('hide')
+}
+function hideH(){
+    quiz.classList.toggle('hide')
+    hufflepuffHouse.classList.toggle('hide')
+}
