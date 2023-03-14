@@ -138,6 +138,32 @@ label:hover{
 }
 
 
+.coat-of-arms{
+    width: 17rem;
+    position: relative;
+    top: 15rem;
+    left: 50rem;
+    
+}
 
+h2 {
+    color: rgb(247, 243, 244);
+    font-size: 3rem;
+    text-align: center;
+    margin: -10rem auto -2rem auto;
+    margin-top: -15rem;
+    margin-bottom: -2rem;
+    text-shadow: 1rem 1rem 1rem rgba(192, 193, 189, 0.681);
+    font-family:var(--font-title);
+   max-width: 50rem;
+}
 
-
+.H-about{
+    color: white;
+    margin-top: 5rem;
+    width: 45rem;
+    font-size: 1.8rem;
+    text-align: left;
+    font-family: var(--font-text);
+    margin: 4rem 3rem;
+}
