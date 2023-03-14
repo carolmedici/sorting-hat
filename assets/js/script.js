@@ -1,6 +1,10 @@
 const welcomeHat = document.querySelector('.talking-hat');
-
-const btnNext = document.querySelector('.btn-next')
+const gryffindorHouse = document.querySelector('.gryffindorHouse')
+const slytherinHouse = document.querySelector('.slytherinHouse')
+const ravenclawHouse = document.querySelector(".ravenclawHouse")
+const hufflepuffHouse = document.querySelector(".hufflepuffHouse")
+const checkResult = document.querySelector('.checkResult')
+const btnResult = document.querySelector('#goResult')
 const apresentation = document.querySelector(".apresentation")
 const quiz = document.querySelector(".quiz")
 const questionsTest = document.querySelector('.questions')
@@ -9,13 +13,13 @@ let alternative2 = document.querySelector(".alternative2")
 let alternative3 = document.querySelector(".alternative3")
 let alternative4 = document.querySelector(".alternative4")
 
-let mychoice = document.querySelector("input[type='radio']:checked");
+const alt1 = document.querySelector('#iA1')
+ talkingHat()
 
 
-/*
 async function talkingHat(){
-   let wizardName = prompt('Hello wizard! Please, insert your name:')*/
-    /*
+   var wizardName = prompt('Hello wizard! Please, insert your name:')
+    
     welcomeHat.innerText = `"Welcome to Hogwarts, ${wizardName}" `
    
     await delay(3)
@@ -41,8 +45,8 @@ async function talkingHat(){
 
     await delay(2)
     
-    welcomeHat.innerText = `"Let me see what you're thinking..."`
-    await delay(2)*/
+    welcomeHat.innerText = `"Hum... Let me see what you're thinking..."`
+    await delay(2)
 
     hideToggle()
     quizStart()
@@ -130,24 +134,15 @@ let quizQuestions = [
     S: "Who studies at all?",
     H: "I'm very organized. But I can improve",
     },
-{
-    question: "What is your idea of a perfect vacation?",
-    G: {
-        text: "Chilling out with friends and taking up new advetures",
-        valor: 4,},
-    R: {
-        text: "Studyng and preparing or anny anuual test/exam in advance",
-        valor: 3,},
-    S: {
-        text:"Watch movies and relax",
-        valor: 2,},
-    H: { 
-        text: "Taking up an interactive or skill-based course", 
-        valor: 1,},
-   },
-];
 
-      
+   { question: "What is your idea of a perfect vacation?",
+    G: "Chilling out with friends and taking up new advetures",
+    R:"Studyng and preparing or anny anuual test/exam in advance",
+    S:"Watch movies and relax",
+    H: "Taking up an interactive or skill-based course", 
+    },
+];
+     
        let questionQuestion = []
        let questionG = []
        let questionR = []
@@ -174,12 +169,7 @@ function quizStart(){
     alternative4.innerText = questionH [index]  
 }
 
-btnNext.onclick = function(e) { 
-    e.preventDefault() //it does not let the button refresh the page
-    
-    nextQuestion()
-   
-}
+
 
 function nextQuestion(){
     if(index < quizQuestions.length -1){
@@ -187,67 +177,100 @@ function nextQuestion(){
     quizStart()}
     else{
         alert("finish")
-        resultHouse()
+        checkingResult()
     }
 }
-     
+
+
 let gryffindor = document.querySelector("#iA1")
 let ravenclaw = document.querySelector("#iA2")
 let slytherin = document.querySelector("#iA3")
 let hufflepuff = document.querySelector("#iA4")  
+const clicks = {
+    gryff: 0,
+    raven: 0,
+    slyt: 0,
+    huffle: 0
+};  
 
 
+gryffindor.addEventListener("click", () => {
+        ++clicks.gryff;
+    console.log('G:' + clicks.gryff)
+    nextQuestion()
+    
+  });
+  
+ravenclaw.addEventListener("click", ()=> {
+    ++clicks.raven
+    console.log('R' + clicks.raven)
+    nextQuestion()
+  
+  });
+slytherin.addEventListener("click", () => {
+    ++clicks.slyt;
+    console.log('S' + clicks.slyt)
+    nextQuestion()
+  });
 
-function resultHouse(){
-let valor= 0
+hufflepuff.addEventListener("click", () => {
+    ++clicks.huffle;
+    console.log('H' + clicks.huffle)
+    nextQuestion()
+  });
 
-if (gryffindor.checked)
-{valor= 4}
-if (ravenclaw.checked)
-{valor= 3}
-if (slytherin.checked)
-{valor= 2}
-if (hufflepuff.checked)
-{valor= 1}
-
-/*
-let ponto = quizQuestions[0].checked
-
-    alert([quizQuestions[0]].checked)
-/*
-let soma = valor[quizQuestions [0]] + valor[questionQuestion [1]] + valor[questionQuestion [2]] + valor[questionQuestion [3]] +valor[questionQuestion [4]] +valor[questionQuestion [5]] +valor[questionQuestion [6]] + valor[questionQuestion [7]] +valor[questionQuestion [8]] +valor[questionQuestion [9]]
-alert(valor[questionQuestion [0]])*/
-
+  
+        
+  function resultHouse(){
+ 
+    if(clicks.gryff > 5){
+        console.log("gryffindor!!!")
+    }        
 }
+
+
+/*CHECKING HAT*/ 
+
+
+function checkingResult(){
+    checkResult.classList.toggle('hide')
+    quiz.classList.toggle('hide')
+    
+}
+
+btnResult.addEventListener("click", () => {
+    houseSelected()
+});
 
 /*SELECTED HOUSE FUNCTION */
 function houseSelected(){
-    if(result <=13){
+    if(clicks.huffle > clicks.slyt && clicks.huffle > clicks.raven && clicks.huffle > clicks.gryff){
         hideH()
-    } else if (result <=25){
+    } else if (clicks.slyt > clicks.huffle && clicks.slyt > clicks.raven && clicks.slyt > clicks.gryff){
         hideS()
-    } else if (result <=32){
+    } else if (clicks.raven > clicks.slyt && clicks.raven > clicks.huffle && clicks.raven > clicks.gryff){
         hideR()
-    } else {
+    } else if (clicks.gryff > clicks.slyt && clicks.gryff > clicks.raven && clicks.gryff > clicks.huffle){
         hideG()
     }
 
 }
+   
 
 
 function hideG(){
-    quiz.classList.toggle('hide')
+    checkResult.classList.toggle('hide')
     gryffindorHouse.classList.toggle('hide')
 }
 function hideS(){
-    quiz.classList.toggle('hide')
+    checkResult.classList.toggle('hide')
     slytherinHouse.classList.toggle('hide')
 }
 function hideR(){
-    quiz.classList.toggle('hide')
+    checkResult.classList.toggle('hide')
     ravenclawHouse.classList.toggle('hide')
 }
 function hideH(){
-    quiz.classList.toggle('hide')
+    checkResult.classList.toggle('hide')
     hufflepuffHouse.classList.toggle('hide')
 }

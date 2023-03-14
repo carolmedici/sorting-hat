@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-<body onload="talkingHat()">  
+<body >
     <h1>Sorting hat</h1>
-    <main>
+    <main onload="talkingHat()">
         <div class="apresentation" >
            
             <img class="hat-img" src="assets/images/chapeu1.gif" alt="Sorting hat image">
@@ -23,16 +23,16 @@
 <div class="quiz hide">
     <img class="hat-quiz-img" src="assets/images/chapeu1.gif" alt="Sorting hat image">
     <p class="questions">Test</p>
-    <form action="">
-        <input type="radio" name="ihouse" id="iA1" value="4" checked><label class="alternative1" for="iA1">variável 1</label><br>
-        <input type="radio" name="ihouse" id="iA2" value="3"><label class="alternative2" for="iA2">variável 2</label><br>
-        <input type="radio" name="ihouse" id="iA3" value="2"><label class="alternative3" for="iA3">variável 3</label><br>
-        <input type="radio" name="ihouse" id="iA4" value="1"><label class="alternative4" for="iA4">variável 4</label><br>
+
+        <div><button id="iA1" value="G" class="alternative1" for="iA1">variável 1</button><p class='clicksGryff'></p><br><br></div>
+        <div><button id="iA2" value="R" class="alternative2" for="iA2">variável 2</button><p class='clicksRaven'></p><br><br></div>
+        <div><button id="iA3" value="S" class="alternative3" for="iA3">variável 3</button><p class='clicksSlyt'></p><br><br></div>
+        <div><button id="iA4" value="H" class="alternative4" for="iA4">variável 4</button><p class='clicksHuffle'></p><br></div>
 
         
         
-    </form>
-    <button class="btn-next">NEXT</button>
+  
+    
 </div>
 
 <div class="gryffindorHouse hide">
@@ -61,6 +61,15 @@
     <h2 class="H-result">Congratulations on being sorted into Slytherin</h2>
 <p class="H-about">Slytherin was one of the four Houses at Hogwarts School of Witchcraft and Wizardry, founded by Salazar Slytherin. In establishing the house, Salazar instructed the Sorting Hat to pick students who had a few particular characteristics he most valued. Those characteristics included cunning, resourcefulness, leadership, and ambition.</p>
 </div>
+
+
+<div class="checkResult hide" >
+           
+    <img class="hat-img" src="assets/images/chapeu1.gif" alt="Sorting hat image">
+    <div class="talking-hat"> "Oh, I see...<br> Your house is..."</div>
+    <button id="goResult">Check result</button>
+</div>
+
 
     </main>
 
