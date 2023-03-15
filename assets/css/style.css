@@ -1,171 +1,165 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;600;800&family=Yusei+Magic&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;600;800&family=Yusei+Magic&display=swap");
 @font-face {
-    font-family: 'Magic Owl';
-    src: url(fonts/magicOwl.otf) format("opentype");
+  font-family: "Magic Owl";
+  src: url(fonts/magicOwl.otf) format("opentype");
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    /*COLORS*/
-    --button-hover: #ac2d2d;
-    --back-main: #000000d7;
-    --button-text: #d1cfcf;
-    --text-color: #e4e1e1;
-    --button-back: #474646;
-    --label-hover: #f1e045;
+:root {
+  /*COLORS*/
+  --button-hover: #ac2d2d;
+  --back-main: #000000d7;
+  --button-text: #d1cfcf;
+  --text-color: #e4e1e1;
+  --button-back: #474646;
+  --label-hover: #f1e045;
 
-    /*FONTS*/
-    --font-text: 'Sono', sans-serif;
-    --font-title: 'Yusei Magic', sans-serif;
+  /*FONTS*/
+  --font-text: "Sono", sans-serif;
+  --font-title: "Yusei Magic", sans-serif;
 
-    /*ACCESSIBILITY*/
-    font-size: 62.5%;
+  /*ACCESSIBILITY*/
+  font-size: 62.5%;
 }
 
-body{
-    background-color: white;
-    background-image: url('../images/great-hall.jpg');
-   background-repeat: no-repeat;
-   background-size: cover;
-   height: 100vh;
-   display: grid;
-   justify-content: center;
+iframe {
+  position: relative;
+  left: -40rem;
 }
 
-main{
-    width: 70rem;
-    height: 40rem;
-    background-color: var(--back-main);
-    margin-top: 2rem;
-    border-radius: 1rem;
-    box-shadow: 1rem 1rem 1rem black;
+body {
+  background-color: white;
+  background-image: url("../images/great-hall.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
 }
 
-h1{
-    color: rgb(247, 243, 244);
-    font-size: 5rem;
-    text-align: center;
-    margin-top: 8rem;
-    margin-bottom: -5rem;
-    text-shadow: 1rem 1rem 1rem rgba(192, 193, 189, 0.681);
-    font-family:var(--font-title);
-   max-width: 86rem;
-
+main {
+  width: 70rem;
+  height: 40rem;
+  background-color: var(--back-main);
+  margin-top: 2rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem black;
 }
 
-.hat-img{
-    width: 20rem;
-    position: relative;
-    right: -45rem;
-    top: 9rem;
+h1 {
+  color: rgb(247, 243, 244);
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: -5rem;
+  text-shadow: 1rem 1rem 1rem rgba(192, 193, 189, 0.681);
+  font-family: var(--font-title);
+  max-width: 86rem;
 }
 
-
-.talking-hat, .questions{
-    color: var(--text-color);
-    font-size: 3rem;
-    padding: 4rem;
-    font-family: var(--font-text);
+/*TALK HAT*/
+.hat-img {
+  width: 20rem;
+  position: relative;
+  right: -45rem;
+  top: 9rem;
 }
 
-.talking-hat{
-    margin-top: -15rem;
-    width: 50rem;
-    text-align: center;
+.talking-hat,
+.questions {
+  color: var(--text-color);
+  font-size: 3rem;
+  padding: 4rem;
+  font-family: var(--font-text);
 }
 
-
-.hide{
-    display: none;
+.talking-hat {
+  margin-top: -15rem;
+  width: 50rem;
+  text-align: center;
 }
 
-.hideResult{
-    display:none;
+.hide {
+  display: none;
 }
 
-/*Next button*/
-
+.hideResult {
+  display: none;
+}
 
 /* Quiz */
-.hat-quiz-img{
-    width: 15rem;
-    position: relative;
-    right: -57rem;
-    top: 25rem;
+.hat-quiz-img {
+  width: 15rem;
+  position: relative;
+  right: -57rem;
+  top: 25rem;
 }
 
-input{    
-    display: none;
+input {
+  display: none;
 }
 
-button{
-    color: white;
-    background-color:transparent;
-border-style: none;
-    font-family: var(--font-text);
-    padding-left: 5rem;
-    font-size: 1.5rem;
-   
-}
-button:hover{
-    color: var(--label-hover)
+button {
+  color: white;
+  background-color: transparent;
+  border-style: none;
+  font-family: var(--font-text);
+  padding-left: 5rem;
+  font-size: 1.5rem;
 }
 
-
-
-.questions{
-    margin-top: -15rem;
-    max-width: 73rem;
+button:hover {
+  color: var(--label-hover);
 }
 
+.questions {
+  margin-top: -15rem;
+  max-width: 73rem;
+}
 
-
-.coat-of-arms{
-    width: 17rem;
-    position: relative;
-    top: 15rem;
-    left: 50rem;
-    
+.coat-of-arms {
+  width: 17rem;
+  position: relative;
+  top: 10rem;
+  left: 50rem;
 }
 
 h2 {
-    color: rgb(247, 243, 244);
-    font-size: 3rem;
-    text-align: center;
-    margin: -10rem auto -2rem auto;
-    margin-top: -15rem;
-    margin-bottom: -2rem;
-    text-shadow: 1rem 1rem 1rem rgba(192, 193, 189, 0.681);
-    font-family:var(--font-title);
-   max-width: 50rem;
+  color: rgb(247, 243, 244);
+  font-size: 3rem;
+  text-align: center;
+  margin: -15rem auto -2rem auto;
+  text-shadow: 1rem 1rem 1rem rgba(192, 193, 189, 0.681);
+  font-family: var(--font-title);
+  max-width: 50rem;
 }
 
-.H-about{
-    color: white;
-    margin-top: 5rem;
-    width: 45rem;
-    font-size: 1.8rem;
-    text-align: left;
-    font-family: var(--font-text);
-    margin: 4rem 3rem;
+.H-about {
+  color: white;
+  margin-top: 5rem;
+  width: 45rem;
+  font-size: 1.8rem;
+  text-align: left;
+  font-family: var(--font-text);
+  margin: 4rem 3rem;
 }
 
-#goResult{
-    font-size: 1.6rem;
-    position: relative;
-    left: 16rem;
-    background-color: var(--button-hover);
-    padding: 0.8rem 1.8rem;
-    border-radius: 2rem;
+#goResult {
+  font-size: 1.6rem;
+  position: relative;
+  left: 16rem;
+  background-color: var(--button-hover);
+  padding: 0.8rem 1.8rem;
+  border-radius: 2rem;
 }
 
-#goResult:hover{
-    background-color: black;
+#goResult:hover {
+  background-color: black;
 }
