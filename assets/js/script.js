@@ -13,10 +13,8 @@ let alternative2 = document.querySelector(".alternative2")
 let alternative3 = document.querySelector(".alternative3")
 let alternative4 = document.querySelector(".alternative4")
 
-const alt1 = document.querySelector('#iA1')
+/*INTRODUCTION*/
  talkingHat()
-
-
 async function talkingHat(){
    var wizardName = prompt('Hello wizard! Please, insert your name:')
     
@@ -52,28 +50,27 @@ async function talkingHat(){
     quizStart()
     
 }
-    
+
+/*DELAY */
 function delay(n){
     return new Promise(function(resolve){
         setTimeout(resolve,n*1000);
     });
 }
 
-
-
+/*CHANGE TO QUIZ */
 function hideToggle(){
     apresentation.classList.toggle('hide')
     quiz.classList.toggle('hide')
 }
 
 
-
-
+/*QUIZ */
 let quizQuestions = [
 {
     question: "You're trapped in a burning building and only have 10 seconds to get out. What would you do?",
     G: "Run and grab my friend that still in the building.",
-    R: "If I have a way to save my friend, then yes, but if I don't,  sorry.",
+    R: "If I have a way to save my friend, then yes, but if I don't, sorry.",
     S: "Save myself, of course!",
     H: "I'll try, but I am not sure!",
 
@@ -137,7 +134,7 @@ let quizQuestions = [
 
    { question: "What is your idea of a perfect vacation?",
     G: "Chilling out with friends and taking up new advetures",
-    R:"Studyng and preparing or anny anuual test/exam in advance",
+    R:"Studyng and preparing or anny anual test/exam in advance",
     S:"Watch movies and relax",
     H: "Taking up an interactive or skill-based course", 
     },
@@ -176,12 +173,11 @@ function nextQuestion(){
     index++
     quizStart()}
     else{
-        alert("finish")
-        checkingResult()
+       checkingResult()
     }
 }
 
-
+/*CHECK RESULT*/
 let gryffindor = document.querySelector("#iA1")
 let ravenclaw = document.querySelector("#iA2")
 let slytherin = document.querySelector("#iA3")
@@ -195,43 +191,28 @@ const clicks = {
 
 
 gryffindor.addEventListener("click", () => {
-        ++clicks.gryff;
-    console.log('G:' + clicks.gryff)
+    ++clicks.gryff;
     nextQuestion()
     
   });
   
 ravenclaw.addEventListener("click", ()=> {
     ++clicks.raven
-    console.log('R' + clicks.raven)
     nextQuestion()
   
   });
 slytherin.addEventListener("click", () => {
     ++clicks.slyt;
-    console.log('S' + clicks.slyt)
     nextQuestion()
   });
 
 hufflepuff.addEventListener("click", () => {
     ++clicks.huffle;
-    console.log('H' + clicks.huffle)
     nextQuestion()
   });
 
   
-        
-  function resultHouse(){
- 
-    if(clicks.gryff > 5){
-        console.log("gryffindor!!!")
-    }        
-}
-
-
 /*CHECKING HAT*/ 
-
-
 function checkingResult(){
     checkResult.classList.toggle('hide')
     quiz.classList.toggle('hide')
@@ -245,32 +226,32 @@ btnResult.addEventListener("click", () => {
 /*SELECTED HOUSE FUNCTION */
 function houseSelected(){
     if(clicks.huffle > clicks.slyt && clicks.huffle > clicks.raven && clicks.huffle > clicks.gryff){
-        hideH()
-    } else if (clicks.slyt > clicks.huffle && clicks.slyt > clicks.raven && clicks.slyt > clicks.gryff){
-        hideS()
-    } else if (clicks.raven > clicks.slyt && clicks.raven > clicks.huffle && clicks.raven > clicks.gryff){
-        hideR()
+        showH()
+    } else if (clicks.slyt > clicks.huffle && clicks.slyt > clicks.raven && clicks.slyt > clicks.gryff ){
+       showS()
+    } else if (clicks.raven > clicks.slyt && clicks.raven > clicks.huffle && clicks.raven > clicks.gryff ){
+        showR()
     } else if (clicks.gryff > clicks.slyt && clicks.gryff > clicks.raven && clicks.gryff > clicks.huffle){
-        hideG()
+        showG()
+    } else{
+        showH()
     }
+}  
 
-}
-   
-
-
-function hideG(){
+/*CHANGE TO RESULT PAGE */
+function showG(){
     checkResult.classList.toggle('hide')
     gryffindorHouse.classList.toggle('hide')
 }
-function hideS(){
+function showS(){
     checkResult.classList.toggle('hide')
     slytherinHouse.classList.toggle('hide')
 }
-function hideR(){
+function showR(){
     checkResult.classList.toggle('hide')
     ravenclawHouse.classList.toggle('hide')
 }
-function hideH(){
+function showH(){
     checkResult.classList.toggle('hide')
     hufflepuffHouse.classList.toggle('hide')
 }
